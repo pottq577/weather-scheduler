@@ -93,8 +93,8 @@ export default function getWeather({
         showsHorizontalScrollIndicator={false}
         onMomentumScrollEnd={handleScroll}
       >
+        {/* 날씨 정보를 불러오는 중일 때 인디케이터 출력 */}
         {days.length === 0 ? (
-          // 날씨 정보를 불러오는 중일 때 인디케이터 출력
           <View style={{ ...styles.day, alignItems: "center" }}>
             {/* 로딩 인디케이터 */}
             <ActivityIndicator color="blue" size="large" />

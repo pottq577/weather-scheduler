@@ -62,12 +62,13 @@ export default function DeleteSchedule({ isModalVisible, toggleModal }) {
     try {
       await AsyncStorage.setItem("eventsArray", JSON.stringify(updatedEvents));
       setSavedEvents(updatedEvents);
+      eventBus.emit("eventDeleted");
+      console.log("Emitting eventDeleted after deleting events");
+      Alert.alert(MESSAGE.HEADER, MESSAGE.DELETE_EVENT);
     } catch (error) {
       console.error(error);
-      Alert.alert(MESSAGE.HEADER, DELETE.FAILED);
+      Alert.alert(MESSAGE.HEADER, MESSAGE.DELETE_FAILED);
     }
-
-    eventBus.emit("eventDeleted");
   };
 
   // 모든 일정 삭제
@@ -79,6 +80,7 @@ export default function DeleteSchedule({ isModalVisible, toggleModal }) {
       console.log("Emitting eventDeleted after deleting all events");
       Alert.alert(MESSAGE.HEADER, MESSAGE.DELETE_ALL_EVENT);
     } catch (error) {
+      $;
       console.error(error);
       Alert.alert(MESSAGE.HEADER, MESSAGE.DELETE_FAILED);
     }

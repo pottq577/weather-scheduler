@@ -103,6 +103,7 @@ const EventForm = ({
         />
       </View>
 
+      {/* 버튼 컨테이너 */}
       <View style={stylesModal.btnContainer}>
         <TouchableOpacity style={styles.btnStyle} onPress={toggleModal}>
           <Text>닫기</Text>

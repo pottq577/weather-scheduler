@@ -111,7 +111,7 @@ export default function EditSchedule({ isModalVisible, toggleModal }) {
       console.error(error);
       Alert.alert(MESSAGE.HEADER, MESSAGE.EDIT_FAILED);
     }
-    // 해당 이벤트의 수정 모드 해제
+
     setEditingEvent((prev) => ({ ...prev, [index]: false }));
   };
 
